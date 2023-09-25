@@ -6,7 +6,7 @@ const MainLayout = ({ children }: any) => {
     <>
       <Header />
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

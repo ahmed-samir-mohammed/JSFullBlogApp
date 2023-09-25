@@ -46,6 +46,10 @@ const navList: NavItemProps[] = [
 
 
 const NavItem = ({ name, link, items, type }: NavItemProps) => {
+    const [drobdown, setDrobdown] = useState(false)
+    const toggleDrobownHandler = () => {
+        setDrobdown((curState) => !curState)
+    }
     return (
         <li className='relative group'>
             {type === 'link' ? (
@@ -53,15 +57,15 @@ const NavItem = ({ name, link, items, type }: NavItemProps) => {
                     <a href={link} className='px-4 py-2'>
                         {name}
                     </a>
-                    <span className='text-blue-500 absolute transition-all duration-500 font-bold left-0 top-0 opacity-0 group-hover:left-[90%] group-hover:opacity-100'>/</span>
+                    <span className='cursor-pointer text-blue-500 absolute transition-all duration-500 font-bold left-0 top-0 opacity-0 group-hover:left-[90%] group-hover:opacity-100'>/</span>
                 </>
             ) : (
-                <>
-                    <a href={link} className='px-4 py-2 flex items-center'>
+                <div className='flex flex-col items-center'>
+                    <button onClick={toggleDrobownHandler} className='px-4 py-2 flex items-center'>
                         <span>{name}</span>
                         <MdOutlineKeyboardArrowDown className='text-white lg:text-dark-hard' />
-                    </a>
-                    <div className='hidden bg-white transition-all duration-300 pt-4 absolute bottom-0 right-0 transform translate-y-full group-hover:block w-max'>
+                    </button>
+                    <div className={` ${drobdown ? 'block' : 'hidden'} bg-dark-soft rounded-lg lg:hidden lg:bg-white transition-all duration-300 lg:pt-4 lg:absolute lg:bottom-0 lg:right-0 lg:transform lg:translate-y-full lg:group-hover:block w-max`}>
                         <ul className='flex flex-col shadow-lg rounded-lg overflow-hidden'>
                             {items?.map((item: NavItemProps) => {
                                 return (
@@ -72,7 +76,7 @@ const NavItem = ({ name, link, items, type }: NavItemProps) => {
                             })}
                         </ul>
                     </div>
-                </>
+                </div>
             )}
         </li>
     )
@@ -85,7 +89,7 @@ const Header = () => {
         console.log(navIsVisible)
     }
     return (
-        <section>
+        <section className='sticky inset-0 z-50 bg-white'>
             <header className={`container mx-auto px-5 flex justify-between items-center py-4`}>
                 <a href='/'>
                     <img className='w-16' src={imgaes.Logo} alt="Logo" />
