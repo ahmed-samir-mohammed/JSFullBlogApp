@@ -51,7 +51,7 @@ const NavItem = ({ name, link, items, type }: NavItemProps) => {
         setDrobdown((curState) => !curState)
     }
     return (
-        <li className='relative group'>
+        <li className="relative group"   >
             {type === 'link' ? (
                 <>
                     <a href={link} className='px-4 py-2'>

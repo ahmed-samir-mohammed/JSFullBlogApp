@@ -1,102 +1,122 @@
 import { ArticalCard } from "../../../interfaces/ArticalCard"
-import AutherImage from '../../../assets/cesar-rincon-xh-vp-wcr-5-gr-q-unsplash-1.png'
-import ArticalImage from '../../../assets/ales-nesetril-im-7-l-zjxe-lhg-unsplash-1.jpg'
 import ArticalCardItem from "../../../components/ArticalCard"
+import { imgaes } from '../../../constants'
+import { FaArrowRight } from 'react-icons/fa'
 
 
 function ArticalsList() {
     const articals_List: ArticalCard[] = [
         {
-            img: ArticalImage,
+            img: imgaes.ArticalImage,
             id: `atrical-id-${Math.floor(Math.random() * 100)}`,
             heading: 'Help Finding Information Online',
             description: 'Majority of peole will work in jobs that don’t exist today.',
             date: '02 May',
             auther: {
-                img: AutherImage,
+                img: imgaes.AutherImage,
                 name: 'Bobby Stevens',
                 isverified: true
             }
         },
         {
-            img: ArticalImage,
+            img: imgaes.ArticalImage,
             id: `atrical-id-${Math.floor(Math.random() * 100)}`,
             heading: 'Help Finding Information Online',
             description: 'Majority of peole will work in jobs that don’t exist today.',
             date: '02 May',
             auther: {
-                img: AutherImage,
+                img: imgaes.AutherImage,
                 name: 'Bobby Stevens',
                 isverified: true
             }
         },
         {
-            img: ArticalImage,
+            img: imgaes.ArticalImage,
             id: `atrical-id-${Math.floor(Math.random() * 100)}`,
             heading: 'Help Finding Information Online',
             description: 'Majority of peole will work in jobs that don’t exist today.',
             date: '02 May',
             auther: {
-                img: AutherImage,
+                img: imgaes.AutherImage,
                 name: 'Bobby Stevens',
                 isverified: true
             }
         },
         {
-            img: ArticalImage,
+            img: imgaes.ArticalImage,
             id: `atrical-id-${Math.floor(Math.random() * 100)}`,
             heading: 'Help Finding Information Online',
             description: 'Majority of peole will work in jobs that don’t exist today.',
             date: '02 May',
             auther: {
-                img: AutherImage,
+                img: imgaes.AutherImage,
                 name: 'Bobby Stevens',
                 isverified: true
             }
         },
         {
-            img: ArticalImage,
+            img: imgaes.ArticalImage,
             id: `atrical-id-${Math.floor(Math.random() * 100)}`,
             heading: 'Help Finding Information Online',
             description: 'Majority of peole will work in jobs that don’t exist today.',
             date: '02 May',
             auther: {
-                img: AutherImage,
+                img: imgaes.AutherImage,
                 name: 'Bobby Stevens',
                 isverified: true
             }
         },
         {
-            img: ArticalImage,
+            img: imgaes.ArticalImage,
             id: `atrical-id-${Math.floor(Math.random() * 100)}`,
             heading: 'Help Finding Information Online',
             description: 'Majority of peole will work in jobs that don’t exist today.',
             date: '02 May',
             auther: {
-                img: AutherImage,
+                img: imgaes.AutherImage,
                 name: 'Bobby Stevens',
                 isverified: true
             }
         },
         {
-            img: ArticalImage,
+            img: imgaes.ArticalImage,
             id: `atrical-id-${Math.floor(Math.random() * 100)}`,
             heading: 'Help Finding Information Online',
             description: 'Majority of peole will work in jobs that don’t exist today.',
             date: '02 May',
             auther: {
-                img: AutherImage,
+                img: imgaes.AutherImage,
                 name: 'Bobby Stevens',
                 isverified: true
             }
-        }
+        },
+        {
+            img: imgaes.ArticalImage,
+            id: `atrical-id-${Math.floor(Math.random() * 100)}`,
+            heading: 'Help Finding Information Online',
+            description: 'Majority of peole will work in jobs that don’t exist today.',
+            date: '02 May',
+            auther: {
+                img: imgaes.AutherImage,
+                name: 'Bobby Stevens',
+                isverified: true
+            }
+        },
     ]
     return (
-        <div className="container mx-auto flex flex-col px-5 py-5 lg:flex-row lg:items-center">
-            {articals_List.map((item) => {
-                return <ArticalCardItem key={item.id} style="w-1/3" {...item} />
-            })}
-        </div>
+        <section className="flex flex-col container mx-auto px-5 py-10">
+            <div className="flex flex-wrap md:gap-x-5 gap-y-5 px-5 py-10">
+                {articals_List.map((item) => {
+                    return <ArticalCardItem key={item.id} style="w-full md:w-[calc(50%-20px)] lg:w-[calc((100%/3)-21px)]" {...item} />
+                })}
+            </div>
+            <div className="group mx-auto w-fit">
+                <button className="flex items-center py-3 px-5 border-[2px] border-primary text-primary rounded-lg w-fit font-bold text-sm hover:bg-primary hover:text-white transition-all duration-300">
+                    <span className="me-2 group-hover:me-4 transition-all duration-150">More articles</span>
+                    <FaArrowRight />
+                </button>
+            </div>
+        </section>
     )
 }
 

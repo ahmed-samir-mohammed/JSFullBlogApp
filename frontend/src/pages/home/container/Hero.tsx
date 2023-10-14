@@ -5,6 +5,10 @@ function Hero() {
     const populatTags: { name: string }[] = [
         { name: 'Design' },
         { name: 'User Experience' },
+        { name: 'User Interfaces' },
+        { name: 'User Experience' },
+        { name: 'Design' },
+
         { name: 'User Interfaces' }
     ]
     return (
@@ -19,11 +23,11 @@ function Hero() {
                     </div>
                     <button className="w-full bg-primary text-white font-semibold rounded-lg px-5 py-3 md:absolute md:right-2 md:top-1/2 md:-translate-y-1/2 md:w-fit md:py-2">Search</button>
                 </div>
-                <div className="flex mt-4 flex-col lg:items-center lg:flex-row lg:flex-nowrap lg:gap-x-4 lg:mt-7">
+                <div className="flex mt-4 flex-col lg:items-start lg:flex-row lg:flex-nowrap lg:gap-x-4 lg:mt-7">
                     <span className="text-dark-light min-w-max font-semibold italic">Popular Tags :</span>
                     <ul className="flex flex-wrap gap-x-2.5 gap-y-2.5 mt-3 lg:mt-0">
                         {populatTags.map((item: string | any, i) => {
-                            return <li className="bg-primary italic text-primary bg-opacity-10 px-3 py-1.5 font-semibold rounded-lg" key={i} >{item.name}</li>
+                            return <li className="bg-primary italic text-primary bg-opacity-10 px-3 py-1.5 font-semibold rounded-lg text-sm" key={i} >{item.name}</li>
                         })}
                     </ul>
                 </div>
